@@ -12,9 +12,11 @@ SELECT * FROM users ORDER BY age ASC;
 -- Ordena todos los datos de la tabla "users" por edad de manera descendente
 SELECT * FROM users ORDER BY age DESC;
 
-----
+
+-- Retrieves all records from the "users" table and sorts them by age groups:
+-- first users over 60, then users aged 40 to 60, and finally users under 40.
 SELECT *
-FROM Employees
+FROM users
 ORDER BY CASE  
             WHEN age < 40  THEN 1
             WHEN age BETWEEN 40 AND 60 THEN 2
