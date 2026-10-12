@@ -19,3 +19,13 @@ CASE
     ELSE False
 END AS '¿Es mayor de edad?'
 FROM users;
+
+
+---
+SELECT * , DATEDIFF(YEAR,BirthDate,GETDATE())  AS Age
+FROM users
+ORDER BY CASE  
+            WHEN DATEDIFF(YEAR,BirthDate,GETDATE()) > 18 THEN 1
+            WHEN DATEDIFF(YEAR,BirthDate,GETDATE()) BETWEEN 40 AND 60 THEN 2
+            ELSE 3
+    END DESC , DATEDIFF(YEAR,BirthDate,GETDATE())
